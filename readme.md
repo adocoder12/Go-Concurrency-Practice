@@ -135,12 +135,3 @@ if errors.Is(r.Err, ErrOutOfStock) { ... }
 | Collect errors, then `errors.Join`      | Keep going, but only need one combined error at the end    |
 
 - A **panic** in a goroutine crashes the whole program, and `main` can't catch it. Only `recover` at boundaries (like per HTTP request), not in every worker.
-
-## Next steps
-
-- [ ] Rewrite it from scratch without looking
-- [ ] Break it on purpose (wrong close, no wait goroutine, remove a lock) and read the error messages
-- [ ] Learn to spot goroutine leaks
-- [ ] Replace `time.After` with real I/O (HTTP requests or DB queries)
-- [ ] Try the fail-fast version with `errgroup`
-# Go-Concurrency-Practice
